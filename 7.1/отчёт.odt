@@ -32,7 +32,7 @@ x	y
 	//#pragma omp for nowait 
 		for (int i=1; i<N; ++i) 
 		{ 
-			x[i] = pow(x[0], i+1); /
+			x[i] = pow(x[0], i+1); 
 			if(i%2==0) 
 			{
 				y[i]=pow(x[0],e)*y[0];
