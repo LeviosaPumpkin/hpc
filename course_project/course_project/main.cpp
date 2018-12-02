@@ -29,7 +29,7 @@ void main()
 	else std::cout << "not OK\n";
 	auto end = std::chrono::steady_clock::now();
 	auto diff = end - start;
-	std::cout << std::chrono::duration <double, std::nano>(diff).count() << " ns" << "\n";
+	std::cout << std::chrono::duration <double, std::milli>(diff).count() << " ms" << "\n";
 	std::cout << "Enter number of vectors to count: ";
 	int num = 0;
 	try
@@ -47,3 +47,6 @@ void main()
 		std::cout << v[i].x << " " << v[i].y << " " << v[i].z << " " << cos[i] << "\n";
 	}*/
 }
+//just code 106965
+//vectorized 104877
+//data alignment 103190
