@@ -9,9 +9,9 @@ struct Vector
 	int x, y, z;
 	Vector()
 	{
-		x = std::rand();
+		/*x = std::rand();
 		y = std::rand();
-		z = std::rand();
+		z = std::rand();*/
 	}
 };
 std::vector<double> countCos(std::vector<Vector> & v)
@@ -21,7 +21,9 @@ std::vector<double> countCos(std::vector<Vector> & v)
 	{
 		double length = sqrt(pow(v[i].x, 2) + pow(v[i].y, 2) + pow(v[i].z, 2));
 		cos[i] = v[i].x / length;
+		//std::cout << v[i].x << " " << v[i].y << " " << v[i].z << " " << cos[i] << "\n";
 	}
 	return cos;
 }
+
 #endif
