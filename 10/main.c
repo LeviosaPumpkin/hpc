@@ -1,33 +1,4 @@
-/*#include <mpi.h>
-#include <stdio.h> 
 
-int main(int argc, char* argv[])
-
-{
-
-	int proc_rank, proc_count;
-	int mas[10];
-	int i;
-
-	MPI_Init(&argc, &argv);
-	MPI_Comm_size(MPI_COMM_WORLD, &proc_count);
-	MPI_Comm_rank(MPI_COMM_WORLD, &proc_rank);
-
-	if (proc_rank==0) 
-		for (i=0; i<10; i++)
-			mas[i]=i+1;
-
-	MPI_Bcast (mas, 10, MPI_INT, 0, MPI_COMM_WORLD);
-	
-	printf("processor %d: ",proc_rank);
-	for (i=0; i<10; i++) printf("%d ", mas[i]);
-	printf("\n");
-	
-	MPI_Finalize();
-
-	return 0;
-
-}*/
 #include <mpi.h>
 #include <stdio.h> 
 
@@ -43,13 +14,10 @@ int main(int argc, char* argv[])
 	MPI_Init(&argc, &argv);
 	MPI_Comm_size(MPI_COMM_WORLD, &proc_count);
 	MPI_Comm_rank(MPI_COMM_WORLD, &proc_rank);
-	
-
 	if (proc_rank==0) 
 		for (i=0; i<10; i++)
 			mas[i]=i+1;
 	t=MPI_Wtime();
-	//MPI_Bcast (mas, 10, MPI_INT, 0, MPI_COMM_WORLD);
 	for (i=0; i<proc_count;++i)
 	{
 		if (i!=proc_rank) 

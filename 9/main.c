@@ -1,8 +1,8 @@
 #include <mpi.h> 
 #include <stdio.h> 
 #include <time.h>
-#define leng 5 
-#define head 0
+#define leng 4 
+#define head 4
 
 int main( int argc, char **argv ) 
 { 
@@ -27,7 +27,7 @@ int main( int argc, char **argv )
    	{ 
       		MPI_Send(&WR[rank],1,MPI_INT, head, 0, MPI_COMM_WORLD);
       		//MPI_Recv(&WR[rank],1,MPI_INT, head, rank, MPI_COMM_WORLD, &status);
-		printf("From masson %d %d\n",rank,WR[rank]); 
+		printf("From masson %d %d time: %f\n",rank,WR[rank],MPI_Wtime()-t); 
    	}
    	if(rank == head)
    	{
@@ -39,7 +39,7 @@ int main( int argc, char **argv )
    	}
 	t2=MPI_Wtime();
 	MPI_Finalize();
-	printf("Time %f\n", t2-t);
+	//printf("Time %f\n", t2-t);
 	return 0;     
 }
 /*Time 0.000347
