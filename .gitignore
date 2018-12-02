@@ -1,0 +1,7 @@
+*.opensdf
+*.sln
+*.suo
+*.ilk
+*.pdb
+*.filters
+/course_project/course_project/Debug
